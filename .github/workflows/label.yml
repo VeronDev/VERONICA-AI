@@ -1,0 +1,16 @@
+name: Labeler
+
+on: 
+  pull_request_target: # Triggered when a pull request is made to the repository
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read  # Read repository contents (to check file paths in PRs)
+      pull-requests: write  # Write permissions to apply labels on pull requests
+
+    steps:
+    - uses: actions/labeler@v4  # Use the labeler action
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"  # Access token for authentication

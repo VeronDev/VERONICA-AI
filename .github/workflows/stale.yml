@@ -1,0 +1,41 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+    - cron: '30 19 * * *'  # Run at 7:30 PM UTC every day
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write  # Allows commenting and adding labels to issues
+      pull-requests: write  # Allows commenting and adding labels to PRs
+
+    steps:
+      - uses: actions/stale@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Message to be added when an issue is marked as stale
+          stale-issue-message: |
+            This issue has been automatically marked as stale due to inactivity. 
+            Please comment or take action if you would like to keep it open. 
+            If there is no response, it will be closed in 7 days.
+
+          # Message to be added when a PR is marked as stale
+          stale-pr-message: |
+            This pull request has been marked as stale due to inactivity. 
+            Please review or comment if you'd like to continue working on it. 
+            If there is no response, it will be closed in 7 days.
+
+          # Label to be added to issues that have been marked as stale
+          stale-issue-label: 'no-issue-activity'
+          
+          # Label to be added to PRs that have been marked as stale
+          stale-pr-label: 'no-pr-activity'
+
+          # Time in days of inactivity before marking as stale
+          days-before-stale: 30  # Issues/PRs inactive for 30 days will be marked as stale
+
+          # Time in days after marking as stale before closing the issue/PR
+          days-before-close: 7  # Stale issues/PRs will be closed 7 days after being marked stale

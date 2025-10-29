@@ -1,0 +1,58 @@
+{
+	"name": "veronica",
+	"version": "2.0.0",
+	"description": "A simple WhatsApp bot built by VeronDev.",
+	"main": "index.js",
+	"type": "module",
+	"imports": {
+		"#lib": "./lib/index.js",
+		"#database": "./lib/database.js",
+		"#bot": "./bot/index.js",
+		"#sql": "./sql/index.js",
+		"#utils": "./utils/index.js",
+		"#config": "./config.js"
+	},
+	"scripts": {
+		"start": "node index"
+	},
+	"files": [
+		"lib",
+		"plugins",
+		"sql"
+	],
+	"license": "MIT",
+	"keywords": [
+		"whatsapp-bot",
+		"astrox11",
+		"baileys"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/VeronDev/VERONICA-AI.git"
+	},
+	"bugs": {
+		"url": "https://github.com/VeronDev/VERONICA-AI/issues"
+	},
+	"homepage": "https://github.com/VeronDev/VERONICA-AI#readme",
+	"author": "VeroDev <veronicaai5421@gmail.com>",
+	"dependencies": {
+		"@ffmpeg-installer/ffmpeg": "^1.1.0",
+		"axios": "^1.7.9",
+		"baileys": "^7.0.0-rc.2",
+		"dotenv": "^16.4.7",
+		"file-type": "^18.0.0",
+		"fluent-ffmpeg": "^2.1.3",
+		"form-data": "^4.0.0",
+		"mathjs": "^14.0.1",
+		"node-webpmux": "^3.2.0",
+		"node-fetch": "^2.6.11",
+		"pg": "^8.13.1",
+		"proxy-agent": "^6.5.0",
+		"qrcode-terminal": "^0.12.0",
+		"sequelize": "^6.37.5",
+		"sharp": "^0.33.5",
+		"simple-git": "^3.27.0",
+		"sqlite3": "^5.1.7"
+	},
+	"packageManager": "yarn@1.22.22"
+}

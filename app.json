@@ -1,0 +1,48 @@
+{
+	"name": "veronica",
+	"description": "Simple WhatsApp By VeronDev",
+	"logo": "https://files.catbox.moe/oli59a.jpg",
+	"repository": "https://github.com/VeronDev/VERONICA-AI",
+	"stack": "container",
+	"success_url": "/",
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		}
+	],
+	"env": {
+		"SESSION_ID": {
+			"description": "Session ID to Run Bot",
+			"required": true
+		},
+		"SUDO": {
+			"description": "Phone Number for Admin Users",
+			"value": "",
+			"required": false
+		},
+		"BOT_INFO": {
+			"description": "Bot Owner, Bot Name, URL LOGO",
+			"value": "ᴠᴇʀᴏɴᴅᴇᴠ;ᴠᴇʀᴏɴɪᴄᴀ;https://files.catbox.moe/oli59a.jpg",
+			"required": false
+		},
+		"STICKER_PACK": {
+			"description": "Exif Metadata for Sticker Pack",
+			"value": "мα∂є ву;ᴠᴇʀᴏɴɪᴄᴀ ᴀɪ",
+			"required": false
+		},
+		"TIME_ZONE": {
+			"description": "Time Zone for Bot",
+			"value": "Africa/Kampala",
+			"required": false
+		},
+		"WARN_COUNT": {
+			"description": "Number of Warnings before Actions",
+			"value": "3",
+			"required": false
+		},
+		"DEBUG": {
+			"description": "Development Purposes",
+			"value": "false"
+		}
+	}
+}

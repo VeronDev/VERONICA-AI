@@ -1,3 +1,5 @@
+//** BASE BY ASTROX11 **/
+//** UPDATED BY VERONDEV **/
 import dotenv from 'dotenv';
 
 dotenv.config();

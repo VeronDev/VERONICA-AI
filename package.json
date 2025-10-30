@@ -40,7 +40,7 @@
 		"axios": "^1.13.1",
         "jimp": "latest",
 		  "baileys": "npm:wileys",
-		"dotenv": "^16.4.7",
+		"dotenv": "^17.2.3",
         "cheerio": "^1.1.2",
 		"file-type": "^18.0.0",
 		"fluent-ffmpeg": "^2.1.3",

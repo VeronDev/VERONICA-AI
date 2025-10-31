@@ -5,6 +5,8 @@ import { formatBytes, runtime } from '#utils';
 import { platform, totalmem, freemem } from 'os';
 import { readFileSync } from 'fs';
 
+const readmore = String.fromCharCode(8206).repeat(4001);
+
 bot(
 	{
 		pattern: 'menu',
@@ -27,11 +29,11 @@ bot(
 │ Memory: ${formatBytes(totalmem() - freemem())}
 │ Day: ${new Date().toLocaleDateString('en-US', { weekday: 'long' })}
 │ Date: ${new Date().toLocaleDateString('en-US')}
-│ Date: ${new Date().toLocaleTimeString('en-US', {
+│ Time: ${new Date().toLocaleTimeString('en-US', {
 			timeZone: config.TIME_ZONE
 		})}
 │ Version: ${config.VERSION}
-╰─────────────\`\`\`\n`;
+╰────────────\`\`\`${readmore}\n`;
 
 		const commandsByType = commands
 			.filter(cmd => cmd.pattern && !cmd.dontAddCommandList)
@@ -61,7 +63,8 @@ bot(
 		await message.send(menuInfo);
 
 		const media = readFileSync('./media/vero.mp3');
-		return await message.send(media, { ptt: false }, 'audio');
+
+		return await message.send({ audio: media, mimetype: 'audio/mpeg', ptt: false });
 	}
 );
 
